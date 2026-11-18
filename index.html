@@ -1,83 +1,242 @@
-<style>
-.p {
-  color: green;
-  font-size: 30px;
-}
-.header {
-  background-color: yellow;
-}
-.body {
-  background-color: lightblue;
-}
-.h1 {
-  text-align: center;
-}
-.button {
-  background-color: green;
-  color: white;
-  padding: 20px;
-  font-size: 20px;
-  border-radius: 10px;
-}
+```html
+<!DOCTYPE html>
+<html lang="ja">
 
-.cards {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.kurabe {
-  display: flex;
-  flex-direction: column;
-}  
-.card {
-  background-color: white;
-  padding: 20px;
-  margin: 10px;
-  border-radius: 15px;
-  border: 2px solid black;
-  box-shadow: 0 4px 10px gray;
-}
-</style>
+  <title>多治見西ミツバチプロジェクト</title>
 
-<html>
+  <style>
+    /* ページ全体 */
+    body {
+      margin: 0;
+      background-color: #f5fbff;
+      font-family: sans-serif;
+      color: #333;
+    }
+
+    /* ヘッダー */
+    header {
+      background-color: #ffd92f;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    /* メイン */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* 説明文 */
+    .intro {
+      text-align: center;
+      font-size: 24px;
+      color: #168a3c;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    /* ボタン */
+    .button {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 40px;
+
+      background-color: #168a3c;
+      color: white;
+
+      padding: 15px 30px;
+      font-size: 20px;
+
+      border: none;
+      border-radius: 10px;
+
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #116b2f;
+    }
+
+    /* 見出し */
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+
+    /* 商品カード */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: white;
+
+      width: 250px;
+      padding: 20px;
+
+      border-radius: 15px;
+      border: 2px solid #ddd;
+
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+      transition: transform 0.2s;
+    }
+
+    /* カードにマウスを乗せたとき */
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #168a3c;
+    }
+
+    .card p {
+      line-height: 1.7;
+    }
+
+    /* 食べ比べセット */
+    .kurabe {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+
+      margin-top: 40px;
+    }
+
+    .kurabe div {
+      background-color: #fff4b8;
+
+      padding: 20px 30px;
+
+      border-radius: 12px;
+      border: 2px solid #e5c84b;
+
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    /* スマホ対応 */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      .intro {
+        font-size: 20px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 350px;
+      }
+
+      .kurabe div {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
   <header>
-<h1>多治見西ミツバチプロジェクト</h1>
+    <h1>🐝 多治見西ミツバチプロジェクト</h1>
   </header>
-  <body>
-<p>ミツバチについて学ぼう！</p>
-<button>植物を見る</button>
 
-<h1>商品一覧</h1>
+  <main>
 
-<div class="cards">
-  <div class="card">
-    <h2>さくら百花</h2>
-    <p>桜の蜜が入ったてます。4月下旬に採蜜。</p>
-  </div>
-  <div class="card">
-    <h2>アカシア</h2>
-    <p>アカシアの蜜が入ってます。5月上旬に採蜜。</p>
-  </div>
-  <div class="card">
-    <h2>アカシア百花</h2>
-    <p>アカシアのなど蜜が入ってます。5月上旬に採蜜。</p>
-  </div>
-  <div class="card">
-    <h2>初夏百花</h2>
-    <p>6月に採れたいろんな花の蜜が入ってます。5月上旬に採蜜。</p>
-  </div>
-   <div class="card">
-    <h2>七夕百花</h2>
-    <p>7月に採れたいろんな花の蜜が入ってます。5月上旬に採蜜。</p>
-  </div>
+    <p class="intro">
+      ミツバチについて学ぼう！
+    </p>
 
-</div>
-    
-<div class="kurabe">
-  <div>春の食べ比べセット</div>
-  <div>夏の食べ比べセット</div>
-</div>
-    
-  </body>
+    <button class="button">
+      🌱 植物を見る
+    </button>
+
+    <h2 class="section-title">
+      🍯 商品一覧
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h2>🌸 さくら百花</h2>
+        <p>
+          桜の蜜が入っています。<br>
+          4月下旬に採蜜。
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>🌼 アカシア</h2>
+        <p>
+          アカシアの蜜が入っています。<br>
+          5月上旬に採蜜。
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>🍯 アカシア百花</h2>
+        <p>
+          アカシアなどの蜜が入っています。<br>
+          5月上旬に採蜜。
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>🌿 初夏百花</h2>
+        <p>
+          6月に採れたいろんな花の蜜が入っています。<br>
+          6月に採蜜。
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>🎋 七夕百花</h2>
+        <p>
+          7月に採れたいろんな花の蜜が入っています。<br>
+          7月に採蜜。
+        </p>
+      </div>
+
+    </div>
+
+    <div class="kurabe">
+
+      <div>
+        🍯 春の食べ比べセット
+      </div>
+
+      <div>
+        🍯 夏の食べ比べセット
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
 </html>
+```
